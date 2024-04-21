@@ -1,0 +1,40 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    background-color: #000;
+}
+
+.logo {
+    width: clamp(5.938rem, 4.688rem + 6.25vw, 9.375rem);
+}
+
+.nav__item {
+    text-decoration: none;
+    color: yellow;
+}
+
+.nav__item:not(:last-child) {
+    /* padding-right: clamp(0.625rem, -0.852rem + 7.39vw, 4.688rem); */
+    padding-right: 75px;
+}
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 560px) {
+    nav, .white__btn {
+        display: none;
+
+    }
+
+    .burger-menu {
+        display: block;
+        color: wheat;
+    }
+}

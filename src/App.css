@@ -1,38 +1,309 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* Поднятие элемента на 20 пикселей вверх */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.hidden {
+  display: none;
+}
+
+.open {
+  display: block;
+}
+
+form {
+  min-width: 1000px;
+  padding: 30px 0;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.form-group { display: inline-block; margin-bottom: 15px; }
+
+label { color: white; display: block; margin-bottom: 5px; }
+
+input, select, textarea { width: 100%; padding: 8px; resize: none }
+
+button { width: 200px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+
+button:hover { background-color: #0056b3; }
+
+.login-txt {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: white;
+
+  .login-link {
+    text-decoration: none;
+  }
+}
+
+.login__test {
+  form {
+    padding: 20px;
+  }
+}
+
+#photo {
+  background-color: white;
+}
+
+.login-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 200px;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  text-align: center;
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  h2 {
+    color: white;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.to__login-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button.login-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.login-button:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+.modal-overflow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  backdrop-filter: blur(8px); /* Блюр-эффект */
+}
+
+.white__btn {
+  text-align: center;
+  width: 182px;
+}
+
+.short__descr {
+  text-align: center;
+  margin: 83px;
+  position: relative;
+}
+
+.short__descr--bouncing-element {
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  animation: bounce 4s ease-in-out infinite;
+  position: absolute;
+  top: 236px;
+  right: 200px;
+  z-index: -1;
+}
+
+.main__title {
+  font-size: 72px;
+  color: black;
+  font-weight: 700;
+  & span {
+    color: #f9322c;
+  }
+}
+
+.text__descr {
+  margin: 0 auto;
+  margin-top: 28px;
+  font-size: 20px; /* Установите нужный размер */
+  font-weight: 300; /* Тонкий шрифт, если это важно */
+  line-height: 1.4; /* Настройте высоту строки */
+  color: #555; /* Цвет текста */
+  max-width: 576px;
+}
+
+.descr__buttons {
+  display: flex;
+  margin-top: 42px;
+  gap: 20px;
+  justify-content: center;
+}
+
+.benefits {
+  min-height: 550px;
+  padding: 144px 0 64px;
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  position: relative;
+}
+
+.benefits--bouncing-element1 {
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  animation: bounce 4s ease-in-out infinite;
+  position: absolute;
+  top: 116px;
+  left: 67px;
+  z-index: -1;
+}
+
+.left__content {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+}
+
+.left__content-title {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.left__content-descr {
+  padding: 25px 0;
+  font-size: 16px;
+}
+
+.left__content-btn {
+  width: 200px;
+}
+
+.right__content-img {
+  border-radius: 5px;
+  width: 587px;
+  transform: rotate(3deg);
+  z-index: 3;
+}
+
+.right__content {
+  position: relative;
+}
+
+.benefits--bouncing-element2 {
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  animation: bounce 4s ease-in-out infinite;
+  position: absolute;
+  top: 246px;
+  right: -44px;
+  z-index: -1;
+}
+
+.bouncing-element {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+
+@media (max-width: 780px) {
+  nav, .white__btn {
+    display: none;
+
+  }
+  .burger-menu {
+    display: block;
+    color: wheat;
+  }
+  .short__descr {
+    margin: 47px;
+  }
+  .main__title {
+    font-size: 19px;
+  }
+  .text__descr {
+    font-size: 12px;
+  }
+  .burger-menu {
+    margin-left: 154px;
+  }
+  .left__content-title {
+    font-size: 20px;
+  }
+  .left__content-descr {
+    font-size: 8px;
+  }
+  .left__content-btn {
+    width: 121px;
+  }
+  .right__content-img {
+    width: 137px;
+  }
+
+  .white__btn.btn.btn-outline-warning.mobile_showing {
+    display: block;
+    font-size: 8px;
+    width: 100px;
+  }
+  .short__descr--bouncing-element,.benefits--bouncing-element1,.benefits--bouncing-element2 {
+    display: none;
+  }
+  .benefits {
+    padding: 20px 0 64px ;
   }
 }
